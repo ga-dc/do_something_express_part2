@@ -8,8 +8,6 @@ Tonight please:
 
 ```
 app/
-  - config/
-    - database.js  
   - models/
     - list.js
     - task.js
