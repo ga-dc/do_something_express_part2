@@ -8,10 +8,16 @@ var tasks = [
   {id: 4, body: "mow lawn", completed: true},
   {id: 5, body: "wash dishes", completed: false}
 ];
+//setting view engine to handlebars
+app.set("view engine", "hbs");
+// this allows the app to handle json post requests
+app.use(bodyParser.json());
+// this allows the app to handle form submissions
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get('/', function(req, res){
-  res.send("Hello World");
+  res.render('newTask');
 });
 
 app.get('/todos', function(req, res){
@@ -23,8 +29,12 @@ app.get('/todos/:id', function(req, res){
   res.json(tasks[task]);
 });
 
-app.post('/todos', function(req, res){
-  res.send("test");
+app.post('/', function(req, res){
+  res.render('newTask', {
+    id: req.params.id,
+    body: req.params.body,
+    completed: req.params.completed
+  });
 });
 
 app.listen(4000, function(){
