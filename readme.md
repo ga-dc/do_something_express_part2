@@ -14,9 +14,13 @@ app/
   - controllers/
     - listsController.js
     - tasksController.js
+  - views/
+    - index.html 
 ```
 
 In the main application, require all of the other files with `require()` and `module.exports`
+
+Complete the CRUD functionality for lists if you have not yet done so.
 
 ## And Then
 
