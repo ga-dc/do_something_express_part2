@@ -4,7 +4,7 @@ Tonights homework is an extension of last nights'. - https://github.com/ga-dc/do
 
 Tonight please:
 
-- Organize your files w/r/t the MVC paradigm:
+- Organize your files with respect to the MVC paradigm:
 
 ```
 app/
