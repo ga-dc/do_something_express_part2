@@ -20,11 +20,11 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/app/views/index.html");
 });
 
-app.get('/todos', function(req, res){
+app.get('/tasks', function(req, res){
   res.json(tasks);
 });
 
-app.get('/todos/:id', function(req, res){
+app.get('/tasks/:id', function(req, res){
   var task = req.params.id;
   res.json(tasks[task]);
 });
