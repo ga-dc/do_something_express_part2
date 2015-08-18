@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get('/', function(req, res){
-  res.render('newTask');
+app.get("/", function(req, res){
+  res.sendFile(__dirname + "/app/views/index.html");
 });
 
 app.get('/todos', function(req, res){
