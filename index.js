@@ -2,12 +2,20 @@ var express = require("express")
 var jade = require("jade")
 var bodyParser = require("body-parser")
 var app = express()
+
+app.use(bodyParser.json()) // Handles JSON post requests
+app.use(bodyParser.urlencoded({extended:true})) // Handles form submissions
+
 app.set("views", __dirname + "/app/views");
 
 app.set('view engine', 'jade')
 
 app.get("/", function(req, res) {
-	res.send(tasks)
+	res.send("Welcome to Do Something!")
+})
+
+app.get("/tasks", function(req, res) {
+	res.json(tasks)
 })
 
 app.get("/tasks/:id", function (req,res) {
