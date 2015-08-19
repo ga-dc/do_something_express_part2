@@ -11,6 +11,10 @@ app.set("view engine", "hbs")
 // allows files from app folder
 app.use(express.static("app"))
 
+app.get("/", function(request, response){
+  response.sendFile(__dirname + "/app/views/index.html");
+});
+
 app.listen(4000, function(){
   console.log("app listening on port 4000")
 })

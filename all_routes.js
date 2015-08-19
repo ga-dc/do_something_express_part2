@@ -8,11 +8,6 @@ var tasks = [
 
 function setup(app){
 
-// root route
-app.get("/", function(req, res){
-  res.json(tasks)
-})
-
 // tasks#index
 app.get('/tasks', function (req, res) {
   res.json(tasks)
