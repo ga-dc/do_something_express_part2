@@ -1,13 +1,7 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
-var tasks = [
-  {id: 1, body: "clean", completed: true},
-  {id: 2, body: "take out trash", completed: true},
-  {id: 3, body: "study", completed: false},
-  {id: 4, body: "mow lawn", completed: true},
-  {id: 5, body: "wash dishes", completed: false}
-];
+var tasks = require("./app/models/task.js");
 //setting view engine to handlebars
 app.set("view engine", "hbs");
 // this allows the app to handle json post requests
@@ -15,6 +9,13 @@ app.use(bodyParser.json());
 // this allows the app to handle form submissions
 app.use(bodyParser.urlencoded({extended: true}));
 
+var tasks = [
+  {id: 1, body: "clean", completed: true},
+  {id: 2, body: "take out trash", completed: true},
+  {id: 3, body: "study", completed: false},
+  {id: 4, body: "mow lawn", completed: true},
+  {id: 5, body: "wash dishes", completed: false}
+];
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/app/views/index.html");
