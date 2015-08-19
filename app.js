@@ -1,8 +1,6 @@
 var express = require('express'),
   app = exports.app = express();
 
-app.set("view engine", "hbs")
-
 var bodyParser = require("body-parser")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -19,6 +17,11 @@ app.get("/tasks", tasksController.index);
 app.post("/tasks", tasksController.create);
 app.get("/tasks/:id", tasksController.show);
 app.delete("/tasks/:id", tasksController.delete);
+
+app.get("/lists", listsController.index);
+app.post("/lists", listsController.create);
+app.get("/lists/:id", listsController.show);
+app.delete("/lists/:id", listsController.delete);
 
 
   listsController.sayHello()
