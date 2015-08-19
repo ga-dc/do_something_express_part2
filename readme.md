@@ -15,7 +15,7 @@ app/
     - listsController.js
     - tasksController.js
   - views/
-    - index.html 
+    - index.html
 ```
 
 In the main application, require all of the other files with `require()` and `module.exports`
@@ -34,5 +34,5 @@ app.get("/", function(request, response){
 });
 ```
 
-Use handlebars to "bootstrap" the application on the first page load. i.e. Handlebars 
+Use handlebars to "bootstrap" the application on the first page load. i.e. Handlebars
 loads data into the HTML.
