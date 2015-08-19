@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/robertbenjamin/do_something_express_part2/issues"
   },
-  "homepage": "https://github.com/robertbenjamin/do_something_express_part2#readme"
+  "homepage": "https://github.com/robertbenjamin/do_something_express_part2#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  }
 }
