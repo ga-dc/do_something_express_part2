@@ -7,7 +7,10 @@ app.get("/", function(req, res){
 })
 
 
-
+//from readme file
+app.get("/", function(request, response){
+  response.sendFile(__dirname + "/app/views/index.html");
+});
 
 app.listen(4000, function(){
   console.log("listening on port 4000")
