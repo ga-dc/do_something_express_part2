@@ -1,17 +1,26 @@
 var express = require('express'),
   app = exports.app = express();
 
-var list = require("./app/models/list.js");
-var task = require("./app/models/task.js");
+app.set("view engine", "hbs")
+
+var bodyParser = require("body-parser")
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
 var listsController = require("./app/controllers/listsController.js");
 var tasksController = require("./app/controllers/tasksController.js");
 
-  app.get("/", function(request, response){
-  response.sendFile(__dirname + "/app/views/index.html");
-  });
+app.get("/", function(request, response){
+response.sendFile(__dirname + "/app/views/index.html");
+});
 
-  list.sayHello()
-  task.sayHello()
+
+app.get("/tasks", tasksController.index);
+app.post("/tasks", tasksController.create);
+app.get("/tasks/:id", tasksController.show);
+app.delete("/tasks/:id", tasksController.delete);
+
+
   listsController.sayHello()
   tasksController.sayHello()
 
