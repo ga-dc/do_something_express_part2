@@ -2,9 +2,6 @@ var list = require("../models/list.js");
 
 module.exports = {
 
-  sayHello: function(){
-      console.log("listsController")
-  },
   index: function(req, res) {
     res.json(list.all())
   },

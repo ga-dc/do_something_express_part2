@@ -2,9 +2,6 @@ var task = require("../models/task.js");
 
 module.exports = {
 
-  sayHello: function(){
-    console.log("tasksController working")
-  },
   index: function(req, res) {
     res.json(task.all())
   },

@@ -7,9 +7,6 @@ var lists = [ {id: 1, body: 'list1', tasks: [ tasks_mod.tasks[0], tasks_mod.task
 
 module.exports = {
 
-  sayHello: function(){
-      console.log("list")
-  },
   all: function() {
     return lists
   },

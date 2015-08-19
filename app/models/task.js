@@ -12,9 +12,6 @@ module.exports = {
               {id: 4, body: 'toDo4', completed: true},
               {id: 5, body: 'toDo5', completed: false}, ],
 
-  sayHello: function(){
-      console.log("task")
-  },
   all: function() {
     return tasks
   },
