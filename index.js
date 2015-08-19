@@ -1,11 +1,17 @@
 var express = require("express")
 var jade = require("jade")
+var bodyParser = require("body-parser")
 var app = express()
+app.set("views", __dirname + "/app/views");
 
 app.set('view engine', 'jade')
 
 app.get("/", function(req, res) {
-	res.render("index")
+	res.send(tasks)
+})
+
+app.get("/tasks/:id", function (req,res) {
+  res.render("index", {id: req.params.id, body: tasks[req.params.id].body, completed: tasks[req.params.id].completed})
 })
 
 tasks = [{id: 0, body: "Take out the trash.", completed: false},
