@@ -19,7 +19,14 @@ app.get("/tasks", function(req, res) {
 })
 
 app.get("/tasks/:id", function (req,res) {
-  res.render("index", {id: req.params.id, body: tasks[req.params.id].body, completed: tasks[req.params.id].completed})
+	id = req.params.id
+  res.render("index", {id: id, body: tasks[id].body, completed: tasks[id].completed})
+})
+
+app.post("/tasks", function(req, res){
+	// I don't understand how this works, at all
+	tasks.push(req.body)
+	res.json(req.body)
 })
 
 tasks = [{id: 0, body: "Take out the trash.", completed: false},
