@@ -5,6 +5,13 @@ var bodyParser = require("body-parser")
 app.use(bodyParser.json()) //handles json post requests
 app.use(bodyParser.urlencoded({ extended: true })) // handles form submissions
 
+app.set("view engine", "hbs")
+app.get("/", function(request, response){
+  response.sendFile(__dirname + "/views/index.html");
+});
+
+app.get("")
+
 var listsController = require('./controllers/listsController');
 listsController.setup(app);
 
